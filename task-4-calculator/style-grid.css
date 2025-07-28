@@ -1,0 +1,28 @@
+@import url('base-styles.css');
+
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 15px; 
+}
+
+.btn-del {
+   
+}
+
+.btn-reset {
+    grid-column: span 2; 
+}
+
+.btn-equals {
+    grid-column: span 2; 
+}
+
+@media (max-width: 600px) {
+    .calculator {
+        padding: 15px;
+    }
+    .keypad {
+        gap: 10px;
+    }
+}

@@ -1,9 +1,73 @@
+<!DOCTYPE html>
 <html lang="en">
-<head >
-    <title>Task 2 Log In Page</title>
-    <link href="index.css" rel="stylesheet">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BNG Login</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <h1>Task 2 Log In Page</h1>
+    <div class="container">
+        <div class="logo">
+            <img src="bng-logo.png" alt="BNG Logo"> 
+        </div>
+        
+        <div class="copyright-section"> 
+            <div class="copyright-line"></div> 
+            <div class="copyright">
+                &copy; All Rights Reserved
+            </div>
+        </div>
+
+        <div class="login-box">
+            <div class="login-header">
+                <span class="user-icon">&#128100;</span> User Login
+            </div>
+            <div class="login-body">
+                <p>Enter your username and password</p>
+                <form>
+                    <div class="input-group">
+                        <label for="username">Username</label>
+                        <div class="input-field-with-icon"> 
+                            <input type="text" id="username" name="username">
+                            <span class="input-icon username-icon"></span> 
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label for="password">Password</label>
+                        <div class="input-field-with-icon"> 
+                            <input type="password" id="password" name="password">
+                            <span class="input-icon password-icon"></span> 
+                            <span class="password-toggle">&#128065;</span> 
+                        </div>
+                    </div>
+                    <button type="submit" class="sign-in-button">Sign In</button>
+                </form>
+            </div>
+            <div class="login-footer-border"></div> 
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const inputs = document.querySelectorAll('.input-group input');
+            inputs.forEach(input => {
+                input.addEventListener('focus', function() {
+                    this.closest('.input-group').classList.add('focused'); 
+                });
+                input.addEventListener('blur', function() {
+                    this.closest('.input-group').classList.remove('focused'); 
+                });
+            });
+
+            const signInButton = document.querySelector('.sign-in-button');
+            signInButton.addEventListener('mouseover', function() {
+                this.style.backgroundColor = '#25508D'; 
+            });
+            signInButton.addEventListener('mouseout', function() {
+                this.style.backgroundColor = '#3465A4'; 
+            });
+        });
+    </script>
 </body>
 </html>

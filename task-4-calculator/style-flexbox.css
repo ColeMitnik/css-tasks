@@ -1,0 +1,40 @@
+@import url('base-styles.css'); 
+
+.keypad {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 15px; 
+    justify-content: space-between; 
+}
+
+.keypad .btn {
+    flex-basis: calc(25% - 11.25px); 
+    width: calc(25% - (3 * 15px / 4)); 
+    width: calc((100% - 3 * 15px) / 4); 
+}
+
+.btn-reset {
+    width: calc((100% - 15px) / 2);
+}
+
+.btn-equals {
+    width: calc((100% - 15px) / 2); 
+}
+
+@media (max-width: 600px) {
+    .calculator {
+        padding: 15px;
+    }
+    .keypad {
+        gap: 10px;
+    }
+    .keypad .btn {
+        width: calc((100% - 3 * 10px) / 4);
+    }
+    .btn-reset, .btn-equals {
+        width: calc((100% - 10px) / 2);
+    }
+    #calc-display {
+        font-size: 2.5rem;
+    }
+}
