@@ -10,8 +10,26 @@ document.addEventListener('DOMContentLoaded', () => {
     let equalsPressed = false;
 
     function updateDisplay() {
-        const formattedInput = parseFloat(currentInput).toLocaleString('en-US', { maximumFractionDigits: 10 });
-        display.textContent = formattedInput;
+        // Handle long numbers and format appropriately
+        let displayValue = currentInput;
+        
+        // Convert to number for formatting, but preserve string for calculations
+        if (!isNaN(displayValue) && displayValue !== '') {
+            const num = parseFloat(displayValue);
+            // Format with commas for readability, but limit decimal places
+            if (num >= 1000000 || num <= -1000000) {
+                displayValue = num.toExponential(5);
+            } else if (num % 1 !== 0) {
+                displayValue = num.toLocaleString('en-US', { 
+                    maximumFractionDigits: 8,
+                    minimumFractionDigits: 0 
+                });
+            } else {
+                displayValue = num.toLocaleString('en-US');
+            }
+        }
+        
+        display.textContent = displayValue;
     }
 
     function appendNumber(number) {
@@ -32,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function chooseOperator(op) {
         if (currentInput === '') return;
-        if (previousInput !== '') {
+        if (previousInput !== '' && !equalsPressed) {
             calculate();
         }
         operator = op;
@@ -59,11 +77,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 result = prev * current;
                 break;
             case '/':
+                if (current === 0) {
+                    alert('Cannot divide by zero');
+                    return;
+                }
                 result = prev / current;
                 break;
             default:
                 return;
         }
+        
         currentInput = result.toString();
         operator = null;
         previousInput = '';
@@ -88,6 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
         updateDisplay();
     }
 
+    // Button event listeners
     buttons.forEach(button => {
         button.addEventListener('click', () => {
             const value = button.dataset.value;
@@ -106,41 +130,68 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Keyboard support
+    document.addEventListener('keydown', (event) => {
+        const key = event.key;
+        event.preventDefault();
+
+        if (key >= '0' && key <= '9' || key === '.') {
+            appendNumber(key);
+        } else if (key === '+' || key === '-' || key === '/') {
+            chooseOperator(key);
+        } else if (key === '*') {
+            chooseOperator('x');
+        } else if (key === 'Enter' || key === '=') {
+            calculate();
+        } else if (key === 'Backspace') {
+            deleteLast();
+        } else if (key === 'Escape') {
+            clearAll();
+        }
+    });
+
     updateDisplay(); 
 
+    // Theme switching functionality
     const themes = {
         1: {
-            '--main-background-1': 'hsl(222, 26%, 31%)',
+            '--main-background-1': 'linear-gradient(135deg, hsl(222, 26%, 31%), hsl(222, 26%, 26%))',
             '--toggle-background-keypad-background-1': 'hsl(223, 31%, 20%)',
             '--screen-background-1': 'hsl(224, 36%, 15%)',
-            '--key-background-1': 'hsl(225, 21%, 49%)',
-            '--key-shadow-1': 'hsl(224, 28%, 35%)',
+            '--key-background-1': 'hsl(30, 25%, 89%)',
+            '--key-shadow-1': 'hsl(28, 16%, 65%)',
+            '--blue-key-background-1': 'hsl(225, 21%, 49%)',
+            '--blue-key-shadow-1': 'hsl(224, 28%, 35%)',
             '--red-key-background-1': 'hsl(6, 63%, 50%)',
             '--red-key-shadow-1': 'hsl(6, 70%, 34%)',
             '--text-color-dark-blue-1': 'hsl(221, 14%, 31%)',
             '--text-color-white-1': 'hsl(0, 0%, 100%)',
         },
         2: {
-            '--main-background-1': 'hsl(0, 0%, 90%)',
+            '--main-background-1': 'linear-gradient(135deg, hsl(0, 0%, 90%), hsl(0, 0%, 85%))',
             '--toggle-background-keypad-background-1': 'hsl(0, 5%, 81%)',
             '--screen-background-1': 'hsl(0, 0%, 93%)',
-            '--key-background-1': 'hsl(185, 42%, 37%)',
-            '--key-shadow-1': 'hsl(185, 58%, 25%)',
+            '--key-background-1': 'hsl(45, 7%, 89%)',
+            '--key-shadow-1': 'hsl(35, 11%, 61%)',
+            '--blue-key-background-1': 'hsl(185, 42%, 37%)',
+            '--blue-key-shadow-1': 'hsl(185, 58%, 25%)',
             '--red-key-background-1': 'hsl(25, 98%, 40%)',
             '--red-key-shadow-1': 'hsl(25, 99%, 27%)',
             '--text-color-dark-blue-1': 'hsl(60, 10%, 19%)',
             '--text-color-white-1': 'hsl(0, 0%, 100%)',
         },
         3: {
-            '--main-background-1': 'hsl(268, 75%, 9%)',
+            '--main-background-1': 'linear-gradient(135deg, hsl(268, 75%, 9%), hsl(268, 75%, 6%))',
             '--toggle-background-keypad-background-1': 'hsl(268, 71%, 12%)',
             '--screen-background-1': 'hsl(268, 71%, 12%)',
-            '--key-background-1': 'hsl(281, 89%, 26%)',
-            '--key-shadow-1': 'hsl(285, 91%, 52%)',
+            '--key-background-1': 'hsl(268, 47%, 21%)',
+            '--key-shadow-1': 'hsl(290, 70%, 36%)',
+            '--blue-key-background-1': 'hsl(281, 89%, 26%)',
+            '--blue-key-shadow-1': 'hsl(285, 91%, 52%)',
             '--red-key-background-1': 'hsl(176, 100%, 44%)',
             '--red-key-shadow-1': 'hsl(177, 92%, 70%)',
             '--text-color-dark-blue-1': 'hsl(52, 100%, 62%)',
-            '--text-color-white-1': 'hsl(0, 0%, 100%)',
+            '--text-color-white-1': 'hsl(52, 100%, 62%)',
         }
     };
 
@@ -152,16 +203,23 @@ document.addEventListener('DOMContentLoaded', () => {
         slider.dataset.theme = themeNumber;
     }
 
-    toggleSwitch.addEventListener('click', (event) => {
-        let currentTheme = parseInt(slider.dataset.theme);
-        let nextTheme = (currentTheme % 3) + 1;
-
-        if (event.target.classList.contains('toggle-number')) {
-            nextTheme = parseInt(event.target.textContent);
-        }
-
-        applyTheme(nextTheme);
+    // Theme number click events
+    document.querySelectorAll('.toggle-number').forEach(number => {
+        number.addEventListener('click', () => {
+            const themeNumber = parseInt(number.dataset.theme);
+            applyTheme(themeNumber);
+        });
     });
 
+    toggleSwitch.addEventListener('click', (event) => {
+        // Only cycle themes if clicking the switch itself, not the numbers
+        if (!event.target.classList.contains('toggle-number')) {
+            let currentTheme = parseInt(slider.dataset.theme);
+            let nextTheme = (currentTheme % 3) + 1;
+            applyTheme(nextTheme);
+        }
+    });
+
+    // Initialize with theme 1
     applyTheme(1);
 });

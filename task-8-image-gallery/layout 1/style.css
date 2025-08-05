@@ -1,0 +1,76 @@
+body {
+    font-family: sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.gallery-container {
+    width: 90%;
+    max-width: 1200px;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+
+.gallery-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.gallery-item {
+    width: calc(20% - 16px);
+    height: 120px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.gallery-row-center {
+    margin: 20px 0;
+}
+
+.gallery-item-center {
+    width: 100%;
+    height: 300px;
+}
+
+.gallery-row-top .gallery-item:nth-child(1) { background-image: url('snow-desert.png'); }
+.gallery-row-top .gallery-item:nth-child(2) { background-image: url('cactus.png'); }
+.gallery-row-top .gallery-item:nth-child(3) { background-image: url('island.png'); }
+.gallery-row-top .gallery-item:nth-child(4) { background-image: url('ice.png'); }
+.gallery-row-top .gallery-item:nth-child(5) { background-image: url('summer.jpeg'); }
+
+.gallery-item-center {
+    background-image: url('valley.png');
+}
+
+.gallery-row-bottom .gallery-item:nth-child(1) { background-image: url('retro.png'); }
+.gallery-row-bottom .gallery-item:nth-child(2) { background-image: url('sunset.jpeg'); }
+.gallery-row-bottom .gallery-item:nth-child(3) { background-image: url('mountain.jpeg'); }
+.gallery-row-bottom .gallery-item:nth-child(4) { background-image: url('tree.png'); }
+.gallery-row-bottom .gallery-item:nth-child(5) { background-image: url('moon.png'); }
+
+@media (max-width: 768px) {
+    .gallery-row {
+        flex-wrap: wrap;
+    }
+    .gallery-item {
+        width: calc(50% - 10px);
+        height: 100px;
+        margin-bottom: 20px;
+    }
+    .gallery-row-center {
+        margin: 10px 0;
+    }
+    .gallery-item-center {
+        height: 200px;
+    }
+}

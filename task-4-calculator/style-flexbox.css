@@ -9,32 +9,49 @@
 
 .keypad .btn {
     flex-basis: calc(25% - 11.25px); 
-    width: calc(25% - (3 * 15px / 4)); 
-    width: calc((100% - 3 * 15px) / 4); 
+    width: calc((100% - 3 * 15px) / 4);
+    flex-grow: 0;
+    flex-shrink: 0;
 }
 
 .btn-reset {
     width: calc((100% - 15px) / 2);
+    flex-basis: calc(50% - 7.5px);
+    min-width: calc(50% - 7.5px);
 }
 
 .btn-equals {
-    width: calc((100% - 15px) / 2); 
+    width: calc((100% - 15px) / 2);
+    flex-basis: calc(50% - 7.5px);
+    min-width: calc(50% - 7.5px);
+}
+
+/* Ensure proper button ordering */
+.keypad {
+    flex-direction: row;
 }
 
 @media (max-width: 600px) {
     .calculator {
         padding: 15px;
     }
+    
     .keypad {
-        gap: 10px;
+        gap: 12px;
     }
+    
     .keypad .btn {
-        width: calc((100% - 3 * 10px) / 4);
+        width: calc((100% - 3 * 12px) / 4);
+        flex-basis: calc(25% - 9px);
     }
+    
     .btn-reset, .btn-equals {
-        width: calc((100% - 10px) / 2);
+        width: calc((100% - 12px) / 2);
+        flex-basis: calc(50% - 6px);
+        min-width: calc(50% - 6px);
     }
+    
     #calc-display {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
     }
 }

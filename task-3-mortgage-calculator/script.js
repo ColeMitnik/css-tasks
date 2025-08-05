@@ -1,10 +1,41 @@
+// Modal Functions
+function openModal() {
+    const modal = document.getElementById('modalOverlay');
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+}
+
+function closeModal(event) {
+    // Only close if clicking the overlay or close button, not the modal content
+    if (event && event.target !== document.getElementById('modalOverlay') && event.target.className !== 'modal-close') {
+        return;
+    }
+    
+    const modal = document.getElementById('modalOverlay');
+    modal.classList.remove('active');
+    document.body.style.overflow = 'auto'; // Restore background scrolling
+}
+
+// Close modal with Escape key
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        closeModal();
+    }
+});
+
+// Form Functions
 function clearForm(event) {
-    event.preventDefault(); // Prevent default link behavior
+    event.preventDefault();
     document.getElementById('mortgage-amount').value = '';
     document.getElementById('mortgage-term').value = '';
     document.getElementById('interest-rate').value = '';
-    document.getElementById('repayment').checked = true; // Set default radio button
+    document.getElementById('repayment').checked = true;
+    
     // Reset the results section
+    resetResultsSection();
+}
+
+function resetResultsSection() {
     document.getElementById('results-section').innerHTML = `
         <div class="results-content">
             <svg class="calculator-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
@@ -63,10 +94,18 @@ function clearForm(event) {
 }
 
 function showResults() {
-    // In a real application, this would trigger calculations and display results.
-    // For this task, we're just simulating the interaction.
-    console.log("Calculate Repayments button clicked!");
-    // Example of dynamic content update (replace with actual results logic)
+    // Get form values
+    const mortgageAmount = document.getElementById('mortgage-amount').value;
+    const mortgageTerm = document.getElementById('mortgage-term').value;
+    const interestRate = document.getElementById('interest-rate').value;
+    
+    // Basic validation
+    if (!mortgageAmount || !mortgageTerm || !interestRate) {
+        alert('Please fill in all fields before calculating.');
+        return;
+    }
+
+    // Show simulated results (no actual calculation as per requirements)
     document.getElementById('results-section').innerHTML = `
         <div class="results-content">
             <svg class="calculator-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
@@ -81,7 +120,56 @@ function showResults() {
             </svg>
             <h2>Your Monthly Repayments</h2>
             <p style="font-size: 28px; font-weight: bold; color: #fff; margin: 10px 0;">£1,234.56</p>
-            <p style="font-size: 14px; color: #a0aec0;">This is an estimated value.</p>
+            <p style="font-size: 14px; color: #a0aec0; margin-bottom: 20px;">This is an estimated value.</p>
+            <hr style="border: none; border-top: 1px solid #4a5568; margin: 20px 0;">
+            <h3 style="font-size: 18px; margin-bottom: 10px;">Total you'll repay over the term</h3>
+            <p style="font-size: 24px; font-weight: bold; color: #fff;">£${(1234.56 * 12 * (mortgageTerm || 25)).toLocaleString()}</p>
         </div>
     `;
 }
+
+// Add input validation and formatting
+document.addEventListener('DOMContentLoaded', function() {
+    // Format mortgage amount input with commas
+    const mortgageAmountInput = document.getElementById('mortgage-amount');
+    mortgageAmountInput.addEventListener('input', function(e) {
+        let value = e.target.value.replace(/,/g, '');
+        if (value && !isNaN(value)) {
+            e.target.value = parseInt(value).toLocaleString();
+        }
+    });
+
+    // Prevent non-numeric input (except decimal point for interest rate)
+    const numericInputs = document.querySelectorAll('input[type="number"]');
+    numericInputs.forEach(input => {
+        input.addEventListener('keydown', function(e) {
+            // Allow: backspace, delete, tab, escape, enter
+            if ([46, 8, 9, 27, 13].indexOf(e.keyCode) !== -1 ||
+                // Allow: Ctrl+A, Ctrl+C, Ctrl+V, Ctrl+X
+                (e.keyCode === 65 && e.ctrlKey === true) ||
+                (e.keyCode === 67 && e.ctrlKey === true) ||
+                (e.keyCode === 86 && e.ctrlKey === true) ||
+                (e.keyCode === 88 && e.ctrlKey === true) ||
+                // Allow: home, end, left, right
+                (e.keyCode >= 35 && e.keyCode <= 39)) {
+                return;
+            }
+            // Ensure that it is a number and stop the keypress
+            if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+                e.preventDefault();
+            }
+        });
+    });
+
+    // Allow decimal point for interest rate input
+    const interestRateInput = document.getElementById('interest-rate');
+    interestRateInput.addEventListener('keydown', function(e) {
+        // Allow decimal point
+        if (e.keyCode === 190 || e.keyCode === 110) {
+            // Only allow one decimal point
+            if (e.target.value.indexOf('.') !== -1) {
+                e.preventDefault();
+            }
+        }
+    });
+});

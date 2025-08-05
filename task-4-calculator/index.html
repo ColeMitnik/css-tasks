@@ -7,8 +7,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="style-grid.css"> -->
-    <link rel="stylesheet" href="style-flexbox.css">
+    <link rel="stylesheet" href="style-grid.css">
+    <!-- <link rel="stylesheet" href="style-flexbox.css"> -->
     </head>
 <body>
     <div class="calculator">
@@ -16,11 +16,15 @@
             <h1 class="calc-title">calc</h1>
             <div class="theme-switcher">
                 <span class="theme-text">THEME</span>
-                <div class="toggle-switch">
-                    <span class="toggle-number">1</span>
-                    <span class="toggle-number">2</span>
-                    <span class="toggle-number">3</span>
-                    <div class="slider" data-theme="1"></div>
+                <div class="theme-container">
+                    <div class="theme-numbers">
+                        <span class="toggle-number" data-theme="1">1</span>
+                        <span class="toggle-number" data-theme="2">2</span>
+                        <span class="toggle-number" data-theme="3">3</span>
+                    </div>
+                    <div class="toggle-switch">
+                        <div class="slider" data-theme="1"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -53,6 +57,6 @@
         </div>
     </div>
 
-    <!-- <script src="script.js"></script> -->
+    <script src="script.js"></script>
 </body>
 </html>

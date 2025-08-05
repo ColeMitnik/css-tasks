@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join - Messages</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo">JOIN</div>
+            <div class="search-bar">
+                <span class="search-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-search-icon lucide-search">
+                    <path d="m21 21-4.34-4.34" />
+                    <circle cx="11" cy="11" r="8" />
+                    </svg>
+                </span>
+                <input type="text" placeholder="Search for jobs, candidates, ..." />
+            </div>
+
+            <div class="header-right">
+                <button class="create-job-btn">+ Create new job</button>
+                <button class="notification-btn"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bell-icon lucide-bell"><path d="M10.268 21a2 2 0 0 0 3.464 0"/><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"/></svg></button>
+                <div class="user-profile">
+                    <div class="user-avatar">JH</div>
+                    <span>Julian H.</span>
+                    <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down-icon lucide-chevron-down"><path d="m6 9 6 6 6-6"/></svg></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="nav-item">
+                <div class="nav-icon fintory">F</div>
+                <span>Fintory</span>
+            </div>
+            <div class="nav-item">
+                <div class="nav-icon dashboard"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-layout-dashboard-icon lucide-layout-dashboard"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg></div>
+                <span>Dashboard</span>
+            </div>
+            <div class="nav-item">
+                <div class="nav-icon jobs"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-briefcase-business-icon lucide-briefcase-business"><path d="M12 12h.01"/><path d="M16 6V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><path d="M22 13a18.15 18.15 0 0 1-20 0"/><rect width="20" height="14" x="2" y="6" rx="2"/></svg></div>
+                <span>Jobs</span>
+            </div>
+            <div class="nav-item">
+                <div class="nav-icon candidates"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users-icon lucide-users"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><path d="M16 3.128a4 4 0 0 1 0 7.744"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><circle cx="9" cy="7" r="4"/></svg></div>
+                <span>Candidates</span>
+            </div>
+            <div class="nav-item active">
+                <div class="nav-icon messages"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-messages-square-icon lucide-messages-square"><path d="M16 10a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 14.286V4a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/><path d="M20 9a2 2 0 0 1 2 2v10.286a.71.71 0 0 1-1.212.502l-2.202-2.202A2 2 0 0 0 17.172 19H10a2 2 0 0 1-2-2v-1"/></svg></div>
+                <span>Messages</span>
+            </div>
+            <div class="nav-item">
+                <div class="nav-icon company"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-building-icon lucide-building"><rect width="16" height="20" x="4" y="2" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/></svg></div>
+                <span>Company</span>
+            </div>
+            <div class="nav-item">
+                <div class="nav-icon settings"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-settings-icon lucide-settings"><path d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915"/><circle cx="12" cy="12" r="3"/></svg></div>
+                <span>Settings</span>
+            </div>
+        </div>
+
+        <!-- Messages Section -->
+        <div class="messages-section">
+            <div class="messages-header">
+                <div class="messages-title">Messages <span class="messages-count">25</span></div>
+                <div class="messages-search">
+                    <input type="text" placeholder="Search">
+                </div>
+                <select class="filter-dropdown">
+                    <option>All Messages</option>
+                </select>
+            </div>
+            <div class="messages-list">
+                <div class="message-item active">
+                    <div class="message-header">
+                        <div class="unread-dot"></div>
+                        <div class="message-avatar" style="background: #3b82f6; color: white;">JH</div>
+                        <div class="message-info">
+                            <div class="message-name">Julian H.</div>
+                            <div class="message-role">applied for UI / UX Designer</div>
+                        </div>
+                        <div class="message-time">2h ago</div>
+                    </div>
+                    <div class="message-preview">
+                        Julian Herbst: Hi, I have a quick question regarding my application on the open ...
+                    </div>
+                </div>
+
+
+                <div class="message-item">
+                    <div class="message-header">
+                        <div class="unread-dot"></div>
+                        <div class="message-avatar" style="background: #f59e0b; color: white;">RJ</div>
+                        <div class="message-info">
+                            <div class="message-name">Ramona J.</div>
+                            <div class="message-role">applied for UI / UX Designer</div>
+                        </div>
+                        <div class="message-time">12h ago</div>
+                    </div>
+                    <div class="message-preview">
+                        Lena Nattkä: Hi Ramona, we just reviewed your application and we're happy to ...
+                    </div>
+                </div>
+
+                <div class="message-item">
+                    <div class="message-header">
+                        <div class="unread-dot"></div>
+                        <div class="message-avatar" style="background: #8b5cf6; color: white;">DW</div>
+                        <div class="message-info">
+                            <div class="message-name">Dominik W.</div>
+                            <div class="message-role">applied for Teamlead Design</div>
+                        </div>
+                        <div class="message-time">2 days ago</div>
+                    </div>
+                    <div class="message-preview">
+                        Lena Nattkä: Hi Dominik, we just reviewed your application and we're happy to ...
+                    </div>
+                </div>
+
+                <div class="message-item">
+                    <div class="message-header">
+                        <div class="message-avatar" style="background: #ef4444; color: white;">KM</div>
+                        <div class="message-info">
+                            <div class="message-name">Kevin M.</div>
+                            <div class="message-role">applied for A very very long position that...</div>
+                        </div>
+                        <div class="message-time">2 days ago</div>
+                    </div>
+                    <div class="message-preview">Kevin Meyers: Good morning, I just wanted to share my design challenge results ...</div>
+                </div>
+
+                <div class="message-item">
+                    <div class="message-header">
+                        <div class="message-avatar" style="background: #f59e0b; color: white;">RJ</div>
+                        <div class="message-info">
+                            <div class="message-name">Ramona J.</div>
+                            <div class="message-role">applied for UI / UX Designer</div>
+                        </div>
+                        <div class="message-time">1 week ago</div>
+                    </div>
+                    <div class="message-preview">Lena Nattkä: Hi Ramona, we just reviewed your application and we're happy to ...</div>
+                </div>
+
+                <div class="message-item">
+                    <div class="message-header">
+                        <div class="message-avatar" style="background: #8b5cf6; color: white;">DW</div>
+                        <div class="message-info">
+                            <div class="message-name">Dominik W.</div>
+                            <div class="message-role">applied for Teamlead Design</div>
+                        </div>
+                        <div class="message-time">08.03.20</div>
+                    </div>
+                    <div class="message-preview">Lena Nattkä: Hi Dominik, we just reviewed your application and we're happy to ...</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chat Area -->
+        <div class="chat-area">
+            <div class="chat-header">
+                <div class="chat-user-info">
+                    <div class="chat-user-avatar">JH</div>
+                    <div class="chat-user-details">
+                        <h3>Julian Herbst</h3>
+                        <p>applied for UI / UX Designer</p>
+                    </div>
+                </div>
+                <div class="chat-actions">
+                    <button class="btn btn-primary">View Profile</button>
+                    <button class="btn btn-secondary">
+                        Applied
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-chevron-down-icon lucide-chevron-down" style="margin-left: 4px;">
+                        <path d="m6 9 6 6 6-6" />
+                        </svg>
+                    </button>
+                    <button class="input-btn thumb-btn"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-thumbs-up-icon lucide-thumbs-up"><path d="M7 10v12"/><path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2a3.13 3.13 0 0 1 3 3.88Z"/></svg></button>
+                    <button class="btn"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x-icon lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
+                    <button class="btn"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-ellipsis-vertical-icon lucide-ellipsis-vertical"><circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/></svg></button>
+                </div>
+            </div>
+
+            <div class="chat-messages">
+                <div class="date-divider">09.03.20</div>
+                
+                <div class="chat-message">
+                    <div class="chat-message-avatar">JH</div>
+                    <div class="chat-message-content">
+                        Hi Lena, I have a quick question regarding my application on the open position „UI / UX Designer":<br><br>
+                        How long does it usually take for you to review a application? I have some options right now but I would like to consider your company as well but I have no timeline since I applied. Please just give me a quick message.<br><br>
+                        Thanks and best regards,<br>
+                        Julian Herbst
+                    </div> 
+                </div>
+
+                <div class="message-time-stamp">Message sent 1 week ago</div>
+
+                <div class="today-label">Today</div>
+
+                <div class="chat-message sent">
+                    <div class="chat-message-avatar" style="background: #f59e0b;">LN</div>
+                    <div class="chat-message-content">
+                        Hi Julian,<br><br>
+                        sorry for the delayed response but we're currently really busy screening a lot of new candidates. So to answer your question: Usually we need around 1 week to review the applications and I just took a look into yours.<br><br>
+                        We like what we see and would like to send you our Design Challenge – that's the way we see how qualified you are. The timeframe is a normal working day (~8 hours).<br><br>
+                        Please finish it within the next 7 days. If you have any questions feel free to message me here.
+                    </div>
+                </div>
+                <div class="message-time-stamp-sent">Message sent just now</div>
+            </div>
+
+            <div class="chat-input">
+                <div class="input-container">
+                    <!-- Left actions -->
+                    <div class="input-actions input-actions-left">
+                    <button class="input-btn"><strong><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bold-icon lucide-bold"><path d="M6 12h9a4 4 0 0 1 0 8H7a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h7a4 4 0 0 1 0 8"/></svg></strong></button>
+                    <button class="input-btn"><em><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-italic-icon lucide-italic"><line x1="19" x2="10" y1="4" y2="4"/><line x1="14" x2="5" y1="20" y2="20"/><line x1="15" x2="9" y1="4" y2="20"/></svg></em></button>
+                    <button class="input-btn"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-list-icon lucide-list"><path d="M3 12h.01"/><path d="M3 18h.01"/><path d="M3 6h.01"/><path d="M8 12h13"/><path d="M8 18h13"/><path d="M8 6h13"/></svg></button>
+                    <button class="input-btn"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-align-justify-icon lucide-align-justify"><path d="M3 12h18"/><path d="M3 18h18"/><path d="M3 6h18"/></svg></button>
+                    <button class="input-btn"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-paperclip-icon lucide-paperclip"><path d="m16 6-8.414 8.586a2 2 0 0 0 2.829 2.829l8.414-8.586a4 4 0 1 0-5.657-5.657l-8.379 8.551a6 6 0 1 0 8.485 8.485l8.379-8.551"/></svg></button>
+                    </div>
+
+                    <!-- Input field -->
+                    <input type="text" placeholder="Write your message">
+
+                    <!-- Right actions -->
+                    <div class="input-actions input-actions-right">
+                    <button class="input-btn"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-smile-icon lucide-smile"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" x2="9.01" y1="9" y2="9"/><line x1="15" x2="15.01" y1="9" y2="9"/></svg></button>
+                    <button class="input-btn"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-ellipsis-vertical-icon lucide-ellipsis-vertical"><circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/></svg></button>
+                    <button class="send-btn">
+                        Send
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-chevron-down-icon lucide-chevron-down" style="margin-left: 4px;">
+                        <path d="m6 9 6 6 6-6" />
+                        </svg>
+                    </button>
+                    </div>
+                </div>
+                </div>
+
+        </div>
+    </div>
+</body>
+</html>

@@ -1,6 +1,84 @@
 <html lang="en">
 <head>
     <title>CSS Tasks</title>
+     <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #fdfbfb, #ebedee);
+      color: #333;
+    }
+
+    main {
+      max-width: 600px;
+      margin: 4rem auto;
+      padding: 2rem;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    header h1 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      color: #444;
+      position: relative;
+    }
+
+    header h1::after {
+      content: "";
+      display: block;
+      height: 4px;
+      width: 60px;
+      background: #4a90e2;
+      margin: 0.5rem auto 0;
+      border-radius: 2px;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    nav li {
+      transition: transform 0.2s ease;
+    }
+
+    nav li:hover {
+      transform: scale(1.02);
+    }
+
+    nav a {
+      display: block;
+      text-decoration: none;
+      background: #f5f7fa;
+      padding: 0.75rem 1rem;
+      border-left: 5px solid #4a90e2;
+      border-radius: 8px;
+      font-weight: 500;
+      color: #333;
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    nav a:hover {
+      background: #e1ecf7;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    @media (max-width: 640px) {
+      main {
+        margin: 2rem 1rem;
+        padding: 1.5rem;
+      }
+
+      header h1 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
 </head>
 <body>
 <main>
@@ -10,10 +88,16 @@
 
     <nav>
         <ul>
-            <li><a href="task-1-results-card/index.html">Task 1 Results Card</a></li>
+            <li><a href="task-1-results-page/index.html">Task 1 Results Card</a></li>
             <li><a href="task-2-login-page/index.html">Task 2 Log In</a></li>
             <li><a href="task-3-mortgage-calculator/index.html">Task 3 Mortgage Calculator</a></li>
             <li><a href="task-4-calculator/index.html">Task 4 Calculator</a></li>
+            <li><a href="task-5-contact-form/index.html">Task 5 Contact Form</a></li>
+            <li><a href="task-6-chat-input/index.html">Task 6 Chat Input</a></li>
+            <li><a href="task-7-layouts/">Task 7 Layouts</a></li>
+            <li><a href="task-8-image-gallery/">Task 8 Image Gallery</a></li>
+            <li><a href="task-9-calendar/index.html">Task 9 Calendar</a></li>
+            <li><a href="task-10-chat/index.html">Task 10 Chat</a></li>
         </ul>
     </nav>
 </main>

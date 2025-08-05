@@ -1,0 +1,124 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #030b55; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.contact-container {
+    display: flex;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    min-width: 900px;
+    width: 100%;
+    margin: 30px;
+    overflow: hidden;
+}
+
+.contact-info {
+    background-color: #092566;
+    color: #fff;
+    padding: 18px 40px 10px 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.contact-info h1 {
+    font-size: 1.5em;
+    margin-bottom: 0px;
+    font-weight: bold; 
+}
+
+.contact-info p {
+    font-size: 1.0em;
+    line-height: 1.6;
+    margin-bottom: 170px;
+}
+
+.contact-info .address-phone p {
+    margin: 0;
+}
+
+.contact-form {
+    flex: 5;
+    padding: 20px;
+    background-color: #e6e9ed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contact-form form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 calc(50% - 10px);
+}
+
+.form-group.message-group {
+    flex: 1 1 100%;
+}
+
+.form-group label {
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    width: calc(100% - 30px);
+    box-sizing: border-box;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.contact-form button {
+    background-color: #0b59be;
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer; 
+    transition: background-color 0.3s ease;
+    width: calc(100% - 30px); 
+    margin-top: 20px;
+}
+
+.contact-form button:hover {
+    background-color: #1558b0;
+}
+
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+        margin: 20px;
+    }
+
+    .contact-info, .contact-form {
+        padding: 30px;
+    }
+
+    .form-group {
+        flex: 1 1 100%; 
+    }
+}
