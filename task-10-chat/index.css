@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: 'Inter', sans-serif;
     background-color: #f8fafc;
     height: 100vh;
     overflow: hidden;
@@ -22,7 +22,7 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    height: 60px;
+    height: 80px;
     background: white;
     border-bottom: 1px solid #e2e8f0;
     display: flex;
@@ -117,7 +117,7 @@ body {
     width: 200px;
     background: white;
     border-right: 1px solid #e2e8f0;
-    margin-top: 60px;
+    margin-top: 80px;
     height: calc(100vh - 60px);
 }
 
@@ -130,6 +130,7 @@ body {
     text-decoration: none;
     cursor: pointer;
     font-size: 14px;
+    border: 1px solid #eaedf1;
 }
 
 .nav-item.active {
@@ -162,7 +163,7 @@ body {
     width: 320px;
     background: white;
     border-right: 1px solid #e2e8f0;
-    margin-top: 60px;
+    margin-top: 80px;
     height: calc(100vh - 60px);
     display: flex;
     flex-direction: column;
@@ -220,7 +221,7 @@ body {
 }
 
 .message-item {
-    padding: 12px 16px;
+    padding: 24px 16px;
     border-bottom: 1px solid #f1f5f9;
     cursor: pointer;
     transition: background-color 0.2s;
@@ -267,8 +268,9 @@ body {
 }
 
 .message-role {
-    color: #5c8dee;
+    color: #31518f;
     font-size: 11px;
+    font-weight: 600;
     line-height: 1.2;
     margin-top: 1px;
 }
@@ -290,7 +292,7 @@ body {
 /* Chat Area */
 .chat-area {
     flex: 1;
-    margin-top: 60px;
+    margin-top: 80px;
     height: calc(100vh - 60px);
     display: flex;
     flex-direction: column;
